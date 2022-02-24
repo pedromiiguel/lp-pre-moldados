@@ -4,7 +4,14 @@ import { Carousel } from '../Carousel';
 
 const SectionProducts: React.FC = () => {
   return (
-    <Box maxWidth={1440} width="100%" mx="auto" height="auto" id="produtos">
+    <Box
+      py={32}
+      maxWidth={1440}
+      width="100%"
+      mx="auto"
+      height="auto"
+      id="produtos"
+    >
       <Heading textAlign="center" my={10}>
         Produtos
       </Heading>

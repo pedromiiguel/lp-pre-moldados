@@ -7,7 +7,6 @@ export const SectionAbout = () => {
       id="sobre"
       alignItems="center"
       justifyContent="space-between"
-      maxWidth={1440}
       flexDirection={[
         'column-reverse',
         'column-reverse',
@@ -16,10 +15,10 @@ export const SectionAbout = () => {
       ]}
       gap={8}
       mx="auto"
-      py={8}
-      px={[4, 8, 8, 8]}
+      py={[8, 8, 8, 32]}
+      
     >
-      <Stack spacing={8} maxWidth={600}>
+      <Stack spacing={8}  px={[8, 8, 8, 32]}>
         <Heading fontSize={['2xl', '2xl', '4xl']} color="#242424">
           Fabricamos blocos, canaletas, muros, casas em pré-moldado e muito
           mais!
@@ -27,18 +26,27 @@ export const SectionAbout = () => {
         <Text fontSize="lg" color="gray.500">
           Todo material que fornecemos atendem às normas exigidas além de passar
           por análises técnicas em laboratórios credenciados periodicamente.
-          {/* A MP PRÉ-MOLDADOS foi criada e fundada em 2012 com intuito de suprir a
+        </Text>
+        <Text fontSize="lg" color="gray.500">
+          A MP PRÉ-MOLDADOS foi criada e fundada em 2012 com intuito de suprir a
           demanda de materiais Pré-moldados para diversas regiões de Brasília.
           Para isso, contamos com um amplo Estoque e Entrega de Mercadorias à
           curto prazo afim de atender da melhor forma tanto o mercado varejo
-          como também o atacado. */}
+          como também o atacado.
         </Text>
       </Stack>
+
       <Image
-        width={['100%', '100%', '100%', '50%']}
-        height={['300px', '300px', '400px', '600px']}
+        borderBottomLeftRadius={["0","0","0","8px"]}
+        borderTopLeftRadius={["0","0","0","8px"]}
+       
+        width={['100%', '100%', '100%', '40%']}
+        height={['360px', '360px', '550px', '550px']}
         src="/blocks.jpg"
         alt="sobre"
+        sx={{
+          boxShadow: '0px 0px 12px rgba(0, 0, 0, 0.555)'
+        }}
       />
     </Flex>
   );

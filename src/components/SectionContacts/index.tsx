@@ -7,7 +7,7 @@ import { HiOutlineMail } from 'react-icons/hi';
 export const SectionContacts: React.FC = () => {
   return (
     <Box
-      bg="gray.50"
+      bg="#f4f4f4"
       borderBottomWidth={1}
       borderStyle={'solid'}
       borderColor={useColorModeValue('gray.200', 'gray.700')}

@@ -80,7 +80,7 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 export function Footer() {
   return (
     <Box
-      bg={useColorModeValue('gray.50', 'gray.900')}
+      bg="#f4f4f4"
       color={useColorModeValue('gray.700', 'gray.200')}
     >
       <Container as={Stack} maxW={1440} py={10}>
@@ -114,21 +114,25 @@ export function Footer() {
           <Stack align={'flex-start'}>
             <ListHeader>Redes Sociais</ListHeader>
             <Stack direction={'row'} spacing={6}>
-              <SocialButton label={'Facebook'} href={'https://www.facebook.com/mppremoldados/'}>
+              <SocialButton
+                label={'Facebook'}
+                href={'https://www.facebook.com/mppremoldados/'}
+              >
                 <FaFacebook />
               </SocialButton>
-              <SocialButton label={'Instagram'} href={'https://www.instagram.com/mp.premoldados/?utm_medium=copy_link'}>
+              <SocialButton
+                label={'Instagram'}
+                href={
+                  'https://www.instagram.com/mp.premoldados/?utm_medium=copy_link'
+                }
+              >
                 <FaInstagram />
               </SocialButton>
             </Stack>
           </Stack>
         </SimpleGrid>
       </Container>
-      <Box
-
-        bg="gray.200"
-
-      >
+      <Box bg="gray.50">
         <Container
           as={Stack}
           maxW={'6xl'}
@@ -138,9 +142,17 @@ export function Footer() {
           justify={{ base: 'center', md: 'space-between' }}
           align={{ base: 'center', md: 'center' }}
         >
-          <Stack >
+          <Stack>
             <Text>Todos os Direitos Reservados 2022 © MP Pré Moldados</Text>
-            <Text>
+            <Text
+              as="a"
+              target="_blank"
+              cursor="pointer"
+              href="https://maps.app.goo.gl/SyAKZb52s2hJAqaGA"
+              _hover={{
+                textDecoration: 'underline'
+              }}
+            >
               Condomínio Fazendinha Conj. A - Sobradinho, Brasília - DF,
               70297-400
             </Text>
