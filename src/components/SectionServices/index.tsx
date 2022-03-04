@@ -5,9 +5,9 @@ import { GiBrickWall, GiClayBrick } from 'react-icons/gi';
 
 const SectionServices = () => {
   const servicesItems = [
+    { name: 'Blocos de concreto', icon: GiClayBrick },
     { name: 'Fabricação de canaletas', icon: GiClayBrick },
     { name: 'Muros Pré Moldados', icon: GiBrickWall },
-    { name: 'Blocos de concreto', icon: GiClayBrick },
   ];
 
   return (
@@ -34,14 +34,14 @@ const SectionServices = () => {
         >
           <Heading textAlign="center">Serviços</Heading>
           <Text
-            fontSize="md"
+            fontSize="lg"
             color="gray.900"
             textAlign="center"
             width="100%"
             maxWidth="500px"
           >
             Com mais de 10 anos no mercado, a Mp Pré moldados já conquistou
-            clientes com seus tratamentos exclusivos e totalmente naturais
+            clientes com seus tratamentos exclusivos e totalmente naturais.
           </Text>
         </Flex>
 

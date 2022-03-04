@@ -15,7 +15,8 @@ import {
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import { FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa';
-import { GoLocation } from 'react-icons/go';
+import { IoLocationOutline } from 'react-icons/io5';
+
 
 const Logo = (props: any) => {
   return (
@@ -79,10 +80,7 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 
 export function Footer() {
   return (
-    <Box
-      bg="#f4f4f4"
-      color={useColorModeValue('gray.700', 'gray.200')}
-    >
+    <Box bg="#f4f4f4" color={useColorModeValue('gray.700', 'gray.200')}>
       <Container as={Stack} maxW={1440} py={10}>
         <SimpleGrid
           templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 2fr' }}
@@ -144,18 +142,24 @@ export function Footer() {
         >
           <Stack>
             <Text>Todos os Direitos Reservados 2022 © MP Pré Moldados</Text>
-            <Text
-              as="a"
-              target="_blank"
-              cursor="pointer"
-              href="https://maps.app.goo.gl/SyAKZb52s2hJAqaGA"
-              _hover={{
-                textDecoration: 'underline'
-              }}
-            >
-              Condomínio Fazendinha Conj. A - Sobradinho, Brasília - DF,
-              70297-400
-            </Text>
+            <Flex>
+              
+              <Box ml={-1}><IoLocationOutline size={24}/></Box>
+              
+              <Text
+              ml={2}
+                as="a"
+                target="_blank"
+                cursor="pointer"
+                href="https://maps.app.goo.gl/SyAKZb52s2hJAqaGA"
+                _hover={{
+                  textDecoration: 'underline',
+                }}
+              >
+                Condomínio Fazendinha Conj. A - Sobradinho, Brasília - DF,
+                70297-400
+              </Text>
+            </Flex>
           </Stack>
 
           <Stack direction={'row'} spacing={6}>

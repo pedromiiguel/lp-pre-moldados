@@ -20,8 +20,7 @@ export const SectionAbout = () => {
     >
       <Stack spacing={8}  px={[8, 8, 8, 32]}>
         <Heading fontSize={['2xl', '2xl', '4xl']} color="#242424">
-          Fabricamos blocos, canaletas, muros, casas em pré-moldado e muito
-          mais!
+          Fabricamos blocos e canaletas de concreto com uma excelente qualidade para construção civil.
         </Heading>
         <Text fontSize="lg" color="gray.500">
           Todo material que fornecemos atendem às normas exigidas além de passar

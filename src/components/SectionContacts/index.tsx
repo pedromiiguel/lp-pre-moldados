@@ -12,6 +12,8 @@ export const SectionContacts: React.FC = () => {
       borderStyle={'solid'}
       borderColor={useColorModeValue('gray.200', 'gray.700')}
       id="fale conosco"
+      px={[4, 8, 8, 8]}
+
     >
       <Box maxWidth={1440} width="100%" mx="auto">
         <Flex
