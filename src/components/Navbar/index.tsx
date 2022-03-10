@@ -3,21 +3,12 @@ import { ReactNode, ReactText } from 'react';
 import {
   Box,
   Flex,
-  Avatar,
   HStack,
-  Link,
   IconButton,
   Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
   useDisclosure,
   useColorModeValue,
-  Stack,
   useBreakpointValue,
-  Image,
   Drawer,
   DrawerContent,
   Text,
@@ -26,35 +17,46 @@ import {
   Icon,
   FlexProps,
 } from '@chakra-ui/react';
-import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
+import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
 import { FiHome, FiBook, FiShoppingCart, FiPhone } from 'react-icons/fi';
 import { IconType } from 'react-icons';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Links = [
-  { name: 'Home', href: '#home' },
-  { name: 'Sobre nós', href: '#sobre' },
-  { name: 'Produtos', href: '#produtos' },
-  { name: 'Fale conosco', href: '#fale conosco' },
+  { name: 'Home', href: '/' },
+  { name: 'Sobre nós', href: '/sobre' },
+  { name: 'Produtos', href: '/produto' },
+  { name: 'Fale conosco', href: '/contato' },
 ];
 
 const NavLink = ({ children, href }: { children: ReactNode; href: string }) => (
-  <Link
-    px={2}
-    py={1}
-    fontWeight="bold"
-    rounded={'md'}
-    _hover={{
-      textDecoration: 'none',
-      bg: 'gray.50',
-    }}
-    href={href}
-  >
-    {children}
+  <Link href={href} passHref>
+    <Text
+      fontSize="18px"
+      px={4}
+      py={1}
+      fontWeight="bold"
+      rounded={'md'}
+      cursor="pointer"
+      _hover={{
+        textDecoration: 'none',
+        bg: 'gray.50',
+      }}
+    >
+      {children}
+    </Text>
   </Link>
 );
 
-export function Navbar() {
+export function Navbar({
+  backgroundColor,
+  isBorderBottom = false,
+}: {
+  backgroundColor: string;
+  isBorderBottom?: boolean;
+}) {
   const showButton = useBreakpointValue({
     sm: false,
     md: true,
@@ -71,7 +73,7 @@ export function Navbar() {
 
   return (
     <>
-      <Box bg="transparent" py={2} px={4}>
+      <Box bg={backgroundColor} py={2} px={4}>
         <Flex
           h={16}
           alignItems={'center'}
@@ -80,18 +82,22 @@ export function Navbar() {
           mx="auto"
         >
           <IconButton
+            bg="transparent"
             size={'md'}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             aria-label={'Open Menu'}
             display={{ md: 'none' }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <Image
-            src="logo.png"
-            width="80px"
-            height="80px"
-            alt="MP pré moldados"
-          />
+          <Link href="/" passHref>
+            <Image
+              src="/logo.png"
+              width="80px"
+              height="80px"
+              alt="MP pré moldados"
+            />
+          </Link>
+
           <HStack spacing={8} alignItems={'center'}>
             <HStack
               as={'nav'}
@@ -115,6 +121,7 @@ export function Navbar() {
                 target="_blank"
                 href="https://api.whatsapp.com/send?phone=5561995200297"
                 color="white"
+                _hover={{ backgroundColor: '#0f242e' }}
               >
                 Faça seu orçamento
               </Button>
@@ -147,30 +154,31 @@ export function Navbar() {
           </Box>
         )}
       </Box>
+      {isBorderBottom && (
+        <Box height="1px" background="#E4E4E4" opacity="0.5"></Box>
+      )}
     </>
   );
 }
 const LinkItems = [
-  { name: 'Home', icon: FiHome },
-  { name: 'Sobre nós', icon: FiBook },
-  { name: 'Produtos', icon: FiShoppingCart },
-  { name: 'Fale conosco', icon: FiPhone },
+  { name: 'Home', icon: FiHome, href: '/' },
+  { name: 'Sobre nós', icon: FiBook, href: '/sobre' },
+  { name: 'Produtos', icon: FiShoppingCart, href: '/produto' },
+  { name: 'Fale conosco', icon: FiPhone, href: '/contato' },
 ];
 
 interface NavItemProps extends FlexProps {
   icon: IconType;
   children: ReactText;
+  href: string;
 }
 
-const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
+const NavItem = ({ icon, children, href, ...rest }: NavItemProps) => {
   return (
-    <Link
-      href="#"
-      style={{ textDecoration: 'none' }}
-      _focus={{ boxShadow: 'none' }}
-    >
+    <Link passHref href={href}>
       <Flex
         align="center"
+        fontWeight="bold"
         p="4"
         mx="4"
         borderRadius="lg"
@@ -181,13 +189,7 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
         }}
         {...rest}
       >
-        {icon && (
-          <Icon
-            mr="4"
-            fontSize="16"
-            as={icon}
-          />
-        )}
+        {icon && <Icon mr="4" fontSize="20" as={icon} />}
         {children}
       </Flex>
     </Link>
@@ -211,16 +213,18 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       {...rest}
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-        <Image
-          src="logo.png"
-          width="60px"
-          height="60px"
-          alt="MP pré moldados"
-        />
+        <Link href="/" passHref>
+          <Image
+            src="/logo.png"
+            width="60px"
+            height="60px"
+            alt="MP pré moldados"
+          />
+        </Link>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
+        <NavItem key={link.name} icon={link.icon} href={link.href}>
           {link.name}
         </NavItem>
       ))}

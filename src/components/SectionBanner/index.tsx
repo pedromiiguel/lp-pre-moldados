@@ -1,4 +1,4 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 import React from 'react';
 import { Navbar } from '../Navbar';
 
@@ -10,14 +10,14 @@ export const SectionBanner = () => {
       height="100vh"
       sx={{
         background:
-          'linear-gradient(#1a18182c, #201d1d3d), url(background_teste.jpg) no-repeat',
+          'linear-gradient(#fffbfb92, #dad5d547), url(banner.jpg) no-repeat',
         backgroundSize: 'cover',
         backgroundAttachment: 'fixed',
-        backgroundPosition: 'center'
+        backgroundPosition: 'center',
       }}
     >
-      <Navbar />
-      <Box height="100vh" width="100%" bg="transparent">
+      <Navbar backgroundColor="transparent" />
+      <Box width="100%" height="100%" bg="transparent">
         <Flex
           alignItems="center"
           justifyContent="center"
@@ -25,30 +25,20 @@ export const SectionBanner = () => {
           width="100%"
           mx="auto"
         >
-          {/* <Flex alignItems={'center'} justifyContent="center" height="100%">
-          <Stack
-            spacing={6}
+          <Flex
+            flexDirection="column"
+            justifyContent="center"
             alignItems="center"
-            width={["90%","90%","90%","50%"]}
-            p={8}
-            bg="#242424"
+            color="black"
+            px={[4, 8, 8, 8]}
           >
-            <Heading color="black" textAlign="center">
-              <Text as="span" color="white" fontSize="32px">
-                Fabricamos blocos, canaletas, muros, casas em pré-moldado e
-                muito mais!
-              </Text>
+            <Heading fontSize={['3xl', '5xl']} lineHeight={['3xl', '5xl']}>
+              N° 1 EM BLOCOS E CANALETAS
             </Heading>
-            <Text fontSize="lg" color="gray.50" textAlign="center">
-              Todo material que fornecemos atendem às normas exigidas além
-              de passar por análises técnicas em laboratórios credenciados
-              periodicamente.
-            </Text>
-            <Button size="lg" width="60%" bg="#C9C3B3">
-              Conheça mais
-            </Button>
-          </Stack>
-        </Flex> */}
+            <Heading fontSize={['3xl', '5xl']} lineHeight={['3xl', '5xl']}>
+              DE CONCRETO EM BRASÍLIA
+            </Heading>
+          </Flex>
         </Flex>
       </Box>
     </Box>

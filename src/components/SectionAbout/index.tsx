@@ -1,7 +1,13 @@
-import { Flex, Heading, Image, Stack, Text } from '@chakra-ui/react';
+import { Box, chakra, Flex, Heading, Stack, Text } from '@chakra-ui/react';
 import React from 'react';
+import Image from 'next/image';
 
 export const SectionAbout = () => {
+  const OurImage = chakra(Image, {
+    shouldForwardProp: (prop) =>
+      ['width', 'height', 'src', 'alt', 'layout'].includes(prop),
+  });
+
   return (
     <Flex
       id="sobre"
@@ -16,11 +22,12 @@ export const SectionAbout = () => {
       gap={8}
       mx="auto"
       py={[8, 8, 8, 32]}
-      
     >
-      <Stack spacing={8}  px={[8, 8, 8, 32]}>
+            
+      <Stack spacing={8} px={[4, 8, 8, 8]} width={['100%', '100%', '100%', '55%']}>
         <Heading fontSize={['2xl', '2xl', '4xl']} color="#242424">
-          Fabricamos blocos e canaletas de concreto com uma excelente qualidade para construção civil.
+          Fabricamos blocos e canaletas de concreto com uma excelente qualidade
+          para construção civil.
         </Heading>
         <Text fontSize="lg" color="gray.500">
           Todo material que fornecemos atendem às normas exigidas além de passar
@@ -34,19 +41,24 @@ export const SectionAbout = () => {
           como também o atacado.
         </Text>
       </Stack>
-
-      <Image
-        borderBottomLeftRadius={["0","0","0","8px"]}
-        borderTopLeftRadius={["0","0","0","8px"]}
-       
-        width={['100%', '100%', '100%', '40%']}
+      <Box
+        width={['100%', '100%', '100%', '45%']}
         height={['360px', '360px', '550px', '550px']}
-        src="/blocks.jpg"
-        alt="sobre"
+        position="relative"
+        borderBottomLeftRadius={['0', '0', '0', '8px']}
+        borderTopLeftRadius={['0', '0', '0', '8px']}
         sx={{
-          boxShadow: '0px 0px 12px rgba(0, 0, 0, 0.555)'
+          boxShadow: '0px 0px 12px rgba(0, 0, 0, 0.3)',
         }}
-      />
+      >
+        <OurImage
+          borderBottomLeftRadius={['0', '0', '0', '8px']}
+          borderTopLeftRadius={['0', '0', '0', '8px']}
+          src="/banner2.jpg"
+          alt="sobre"
+          layout="fill"
+        />
+      </Box>
     </Flex>
   );
 };

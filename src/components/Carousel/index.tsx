@@ -13,13 +13,12 @@ import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper';
 import {
   Box,
+  chakra,
   Flex,
   Heading,
-  Image,
-  Stack,
-  Text,
   useBreakpointValue,
 } from '@chakra-ui/react';
+import Image from 'next/image';
 
 import { products } from './produts';
 
@@ -37,7 +36,10 @@ export function Carousel() {
     lg: '500px',
   });
 
-  console.log(widthSlides);
+  const OurImage = chakra(Image, {
+    shouldForwardProp: (prop) =>
+      ['width', 'height', 'src', 'alt', 'layout'].includes(prop),
+  });
 
   return (
     <>
@@ -80,15 +82,20 @@ export function Carousel() {
           {products.map((product) => (
             <div key={product.description}>
               <SwiperSlide>
-                <Flex width="100%" height={['400px', '500px']} flexDirection="column">
-                  <Image
-                    width="100%"
-                    height={['300px', '400px']}
-                    src={product.image}
-                    alt="sobre"
-                    objectFit="contain"
-                    borderRadius="8px"
-                  />
+                <Flex
+                  width="100%"
+                  height={['400px', '500px']}
+                  flexDirection="column"
+                >
+                  <Box width="100%" height={['300px', '400px']} position="relative">
+                    <OurImage
+                      src={product.image}
+                      alt="sobre"
+                      layout="fill"
+                      borderRadius="8px"
+                    />
+                  </Box>
+
                   <Heading color="gray.900" size="md" py={5} textAlign="center">
                     {product.name} {product.description}
                   </Heading>

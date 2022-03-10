@@ -2,21 +2,18 @@ import {
   Box,
   chakra,
   Container,
-  Link,
   SimpleGrid,
   Stack,
   Text,
   VisuallyHidden,
-  Input,
-  IconButton,
   useColorModeValue,
-  Image,
   Flex,
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import { FaInstagram, FaTwitter, FaFacebook } from 'react-icons/fa';
 import { IoLocationOutline } from 'react-icons/io5';
-
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Logo = (props: any) => {
   return (
@@ -89,7 +86,7 @@ export function Footer() {
           <Stack spacing={6}>
             <Box>
               <Image
-                src="logo.png"
+                src="/logo.png"
                 width="200px"
                 height="200px"
                 alt="MP pré moldados"
@@ -98,16 +95,16 @@ export function Footer() {
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>Links</ListHeader>
-            <Link href={'#'}>Home</Link>
-            <Link href={'#'}>Sobre nós</Link>
-            <Link href={'#'}>Produtos</Link>
-            <Link href={'#'}>Fale conosco</Link>
+            <Link href="/">Home</Link>
+            <Link href="/sobre">Sobre nós</Link>
+            <Link href="/produto">Produtos</Link>
+            <Link href="/contato">Fale conosco</Link>
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>Horário de atendimento</ListHeader>
-            <Link href={'#'}>Segunda a sexta: 07:00 às 17:00</Link>
-            <Link href={'#'}>Sábado: 07:00 às 12:00</Link>
-            <Link href={'#'}>Domingo: Fechado</Link>
+            <Text>Segunda a sexta: 07:00 às 17:00</Text>
+            <Text>Sábado: 07:00 às 12:00</Text>
+            <Text>Domingo: Fechado</Text>
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>Redes Sociais</ListHeader>
@@ -130,24 +127,27 @@ export function Footer() {
           </Stack>
         </SimpleGrid>
       </Container>
-      <Box bg="gray.50">
+      <Box height="1px" background="#E4E4E4" opacity="0.9" />
+      <Box>
         <Container
           as={Stack}
-          maxW={'6xl'}
+          maxW={1440}
+          width="100%"
           py={4}
           direction={{ base: 'column', md: 'row' }}
-          spacing={4}
           justify={{ base: 'center', md: 'space-between' }}
           align={{ base: 'center', md: 'center' }}
+          gap={4}
         >
           <Stack>
             <Text>Todos os Direitos Reservados 2022 © MP Pré Moldados</Text>
             <Flex>
-              
-              <Box ml={-1}><IoLocationOutline size={24}/></Box>
-              
+              <Box ml={-1}>
+                <IoLocationOutline size={24} />
+              </Box>
+
               <Text
-              ml={2}
+                ml={2}
                 as="a"
                 target="_blank"
                 cursor="pointer"

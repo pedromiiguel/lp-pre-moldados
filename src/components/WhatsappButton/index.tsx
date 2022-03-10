@@ -1,4 +1,5 @@
-import { Flex, Image } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
+import Image from 'next/image';
 import React from 'react';
 
 type WhatsappButtonProps = {
@@ -14,7 +15,7 @@ export const WhatsappButton = ({ phoneNumber, text }: WhatsappButtonProps) => {
       position="fixed"
       bottom="20px"
       right="20px"
-      zIndex="100"
+      zIndex="20"
       cursor="pointer"
       as="a"
       bg="#45c655"
