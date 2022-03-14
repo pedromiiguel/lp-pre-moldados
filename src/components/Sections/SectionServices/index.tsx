@@ -1,38 +1,32 @@
-import { Box, Flex, Heading, Icon, Image, Text } from '@chakra-ui/react';
+import { Flex, Heading, Icon, Text } from '@chakra-ui/react';
 import React from 'react';
-
-import { GiBrickWall, GiClayBrick } from 'react-icons/gi';
+import Container from '../../Container';
+import content from './content';
 
 const SectionServices = () => {
-  const servicesItems = [
-    { name: 'Blocos de concreto', icon: GiClayBrick },
-    { name: 'Fabricação de canaletas', icon: GiClayBrick },
-    { name: 'Muros Pré Moldados', icon: GiBrickWall },
-  ];
-
   return (
     <Flex
+      as="section"
       alignItems="center"
       justifyContent="center"
       mx="auto"
       py={32}
-      px={[4, 8, 8, 8]}
       sx={{
         background:
           'linear-gradient(#ffffffa7, #ffffff97), url(https://images.unsplash.com/photo-1579492450119-80542d516179?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)',
-
         boxShadow: '0px 0px 12px rgba(0, 0, 0, 0.199)',
       }}
     >
-      <Box maxWidth={1440} width="100%" mx="auto">
+      <Container>
         <Flex
+          width="100%"
           alignItems=" center"
           justifyContent="center"
           flexDirection="column"
           gap="8"
           mb={12}
         >
-          <Heading textAlign="center">Serviços</Heading>
+          <Heading textAlign="center">{content.title}</Heading>
           <Text
             fontSize="lg"
             color="gray.900"
@@ -40,8 +34,7 @@ const SectionServices = () => {
             width="100%"
             maxWidth="500px"
           >
-            Com mais de 10 anos no mercado, a Mp Pré moldados já conquistou
-            clientes com seus tratamentos exclusivos e totalmente naturais.
+            {content.subtitle}
           </Text>
         </Flex>
 
@@ -51,7 +44,7 @@ const SectionServices = () => {
           gap={8}
           flexDirection={['column', 'column', 'row']}
         >
-          {servicesItems.map((service) => (
+          {content.cards.map((service) => (
             <Flex
               key={service.name}
               borderRadius="16px"
@@ -71,7 +64,6 @@ const SectionServices = () => {
               _hover={{
                 transform: 'scale(1.05)',
               }}
-              cursor="pointer"
             >
               <Icon
                 mr="4"
@@ -88,7 +80,7 @@ const SectionServices = () => {
             </Flex>
           ))}
         </Flex>
-      </Box>
+      </Container>
     </Flex>
   );
 };

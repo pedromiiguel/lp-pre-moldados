@@ -5,14 +5,15 @@ import {
   Grid,
   GridItem,
   Heading,
-  Text,
+  Text
 } from '@chakra-ui/react';
 import { NextPage } from 'next';
 import Head from 'next/head';
-import { Navbar } from '../../components/Navbar';
+import Image from 'next/image';
 import { products } from '../../components/Carousel/produts';
 import { Footer } from '../../components/Footer';
-import Image from 'next/image';
+import { Navbar } from '../../components/Navbar';
+import { WhatsappButton } from '../../components/WhatsappButton';
 const Produto: NextPage = () => {
   const OurImage = chakra(Image, {
     shouldForwardProp: (prop) =>
@@ -44,7 +45,7 @@ const Produto: NextPage = () => {
         >
           {products.map((product) => (
             <GridItem
-              w="100%"
+              // w="300px"
               key={product.description}
               sx={{
                 boxShadow: '0px 0px 12px rgba(0, 0, 0, 0.2)',
@@ -60,7 +61,12 @@ const Produto: NextPage = () => {
                   height={['300px', '400px']}
                   position="relative"
                 >
-                  <OurImage src={product.image} alt="sobre" layout="fill" />
+                  <OurImage
+                    src={product.image}
+                    alt="sobre"
+                    layout="fill"
+                    objectFit="contain"
+                  />
                 </Box>
 
                 <Box p={4}>
@@ -83,6 +89,15 @@ const Produto: NextPage = () => {
                       <Text color="gray.300">{product.price}</Text>
                     </Flex>
                   )}
+
+                  {!!product.thousand && (
+                    <Flex>
+                      <Text color="gray.900" fontWeight="bold" mr={2}>
+                        Milheiro:
+                      </Text>
+                      <Text color="gray.300">{product.thousand}</Text>
+                    </Flex>
+                  )}
                 </Box>
               </div>
             </GridItem>
@@ -90,6 +105,8 @@ const Produto: NextPage = () => {
         </Grid>
       </Box>
       <Footer />
+      <WhatsappButton phoneNumber="6141027744" text="" />
+
     </>
   );
 };

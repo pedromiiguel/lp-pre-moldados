@@ -1,62 +1,60 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { ReactNode, ReactText } from 'react';
+import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import {
   Box,
-  Flex,
-  HStack,
-  IconButton,
+  BoxProps,
   Button,
-  useDisclosure,
-  useColorModeValue,
-  useBreakpointValue,
+  chakra,
+  CloseButton,
   Drawer,
   DrawerContent,
-  Text,
-  CloseButton,
-  BoxProps,
-  Icon,
+  Flex,
   FlexProps,
+  HStack,
+  Icon,
+  IconButton,
+  Text,
+  useBreakpointValue,
+  useColorModeValue,
+  useDisclosure
 } from '@chakra-ui/react';
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-
-import { FiHome, FiBook, FiShoppingCart, FiPhone } from 'react-icons/fi';
-import { IconType } from 'react-icons';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
+import { ReactNode, ReactText } from 'react';
+import { IconType } from 'react-icons';
+import { FiBook, FiHome, FiPhone, FiShoppingCart } from 'react-icons/fi';
 
 const Links = [
-  { name: 'Home', href: '/' },
-  { name: 'Sobre nós', href: '/sobre' },
-  { name: 'Produtos', href: '/produto' },
-  { name: 'Fale conosco', href: '/contato' },
+  { name: 'Home', icon: FiHome, href: '/' },
+  { name: 'Sobre nós', icon: FiBook, href: '/sobre' },
+  { name: 'Produtos', icon: FiShoppingCart, href: '/produto' },
+  { name: 'Fale conosco', icon: FiPhone, href: '/contato' },
 ];
 
-const NavLink = ({ children, href }: { children: ReactNode; href: string }) => (
-  <Link href={href} passHref>
-    <Text
-      fontSize="18px"
-      px={4}
-      py={1}
-      fontWeight="bold"
-      rounded={'md'}
-      cursor="pointer"
-      _hover={{
-        textDecoration: 'none',
-        bg: 'gray.50',
-      }}
-    >
-      {children}
-    </Text>
-  </Link>
-);
+type NavbarProps = {
+  backgroundColor?: string;
+  isBorderBottom?: boolean;
+};
+
+type NavLinkProps = {
+  children: ReactNode;
+  href: string;
+};
+
+interface NavItemProps extends FlexProps {
+  icon: IconType;
+  children: ReactText;
+  href: string;
+}
+
+interface SidebarProps extends BoxProps {
+  onClose: () => void;
+}
 
 export function Navbar({
-  backgroundColor,
+  backgroundColor = 'transparent',
   isBorderBottom = false,
-}: {
-  backgroundColor: string;
-  isBorderBottom?: boolean;
-}) {
+}: NavbarProps) {
   const showButton = useBreakpointValue({
     sm: false,
     md: true,
@@ -71,9 +69,15 @@ export function Navbar({
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const OurImage = chakra(Image, {
+    shouldForwardProp: (prop) =>
+      ['width', 'height', 'src', 'alt', 'layout'].includes(prop),
+  });
+
+
   return (
     <>
-      <Box bg={backgroundColor} py={2} px={4}>
+      <Box bg={backgroundColor} py={2} px={2}>
         <Flex
           h={16}
           alignItems={'center'}
@@ -85,16 +89,17 @@ export function Navbar({
             bg="transparent"
             size={'md'}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={'Open Menu'}
+            aria-label={isOpen ? 'Open Menu' : 'Close Menu'}
             display={{ md: 'none' }}
             onClick={isOpen ? onClose : onOpen}
           />
           <Link href="/" passHref>
-            <Image
+            <OurImage
               src="/logo.png"
               width="80px"
               height="80px"
               alt="MP pré moldados"
+              cursor="pointer"
             />
           </Link>
 
@@ -119,6 +124,7 @@ export function Navbar({
                 size={buttonSize}
                 as="a"
                 target="_blank"
+                aria-label="Open Whatsapp"
                 href="https://api.whatsapp.com/send?phone=5561995200297"
                 color="white"
                 _hover={{ backgroundColor: '#0f242e' }}
@@ -160,45 +166,27 @@ export function Navbar({
     </>
   );
 }
-const LinkItems = [
-  { name: 'Home', icon: FiHome, href: '/' },
-  { name: 'Sobre nós', icon: FiBook, href: '/sobre' },
-  { name: 'Produtos', icon: FiShoppingCart, href: '/produto' },
-  { name: 'Fale conosco', icon: FiPhone, href: '/contato' },
-];
 
-interface NavItemProps extends FlexProps {
-  icon: IconType;
-  children: ReactText;
-  href: string;
-}
+const NavLink = ({ children, href }: NavLinkProps) => (
+  <Link href={href} passHref>
+    <Text
+      fontSize="18px"
+      px={4}
+      py={1}
+      fontWeight="bold"
+      rounded={'md'}
+      cursor="pointer"
+      _hover={{
+        textDecoration: 'none',
+        bg: 'gray.50',
+      }}
+    >
+      {children}
+    </Text>
+  </Link>
+);
 
-const NavItem = ({ icon, children, href, ...rest }: NavItemProps) => {
-  return (
-    <Link passHref href={href}>
-      <Flex
-        align="center"
-        fontWeight="bold"
-        p="4"
-        mx="4"
-        borderRadius="lg"
-        role="group"
-        cursor="pointer"
-        _hover={{
-          bg: 'gray.50',
-        }}
-        {...rest}
-      >
-        {icon && <Icon mr="4" fontSize="20" as={icon} />}
-        {children}
-      </Flex>
-    </Link>
-  );
-};
-
-interface SidebarProps extends BoxProps {
-  onClose: () => void;
-}
+//Menu mobile
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   return (
@@ -223,11 +211,34 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         </Link>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
-      {LinkItems.map((link) => (
+      {Links.map((link) => (
         <NavItem key={link.name} icon={link.icon} href={link.href}>
           {link.name}
         </NavItem>
       ))}
     </Box>
+  );
+};
+
+const NavItem = ({ icon, children, href, ...rest }: NavItemProps) => {
+  return (
+    <Link passHref href={href}>
+      <Flex
+        align="center"
+        fontWeight="bold"
+        p="4"
+        mx="4"
+        borderRadius="lg"
+        role="group"
+        cursor="pointer"
+        _hover={{
+          bg: 'gray.50',
+        }}
+        {...rest}
+      >
+        {icon && <Icon mr="4" fontSize="20" as={icon} />}
+        {children}
+      </Flex>
+    </Link>
   );
 };

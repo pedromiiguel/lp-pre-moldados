@@ -3,11 +3,12 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import { BsTelephone } from 'react-icons/bs';
+import { FiFacebook, FiInstagram } from 'react-icons/fi';
 import { HiOutlineMail } from 'react-icons/hi';
 import { IoLocationOutline } from 'react-icons/io5';
-import { FiFacebook, FiInstagram } from 'react-icons/fi';
-import { Navbar } from '../../components/Navbar';
 import { Footer } from '../../components/Footer';
+import { Navbar } from '../../components/Navbar';
+import { WhatsappButton } from '../../components/WhatsappButton';
 
 const Contato: NextPage = () => {
   return (
@@ -42,8 +43,9 @@ const Contato: NextPage = () => {
                 color="white"
                 as="a"
                 target="_blank"
-                href="https://api.whatsapp.com/send?phone=5561995200297"
+                href="https://api.whatsapp.com/send?phone=556141027744"
                 bg="blue.900"
+                aria-label="Open Whatsapp"
                 _hover={{ backgroundColor: '#0f242e' }}
                 leftIcon={
                   <Image
@@ -67,7 +69,21 @@ const Contato: NextPage = () => {
           >
             <Flex alignItems="center" justifyContent="flex-start" gap={4}>
               <BsTelephone size={26} color="#193B4B" />
-              <Text>(61) 4102-7744</Text>
+              <Text
+                as="a"
+                href="tel:614102774"
+                _hover={{ textDecoration: 'underline' }}
+              >
+                (61) 4102-7744
+              </Text>
+              |
+              <Text
+                as="a"
+                href="tel:61993806396"
+                _hover={{ textDecoration: 'underline' }}
+              >
+                (61) 99380-6396
+              </Text>
             </Flex>
             <Flex>
               <Box ml={-1}>
@@ -80,16 +96,22 @@ const Contato: NextPage = () => {
                 target="_blank"
                 cursor="pointer"
                 href="https://maps.app.goo.gl/SyAKZb52s2hJAqaGA"
+                _hover={{ textDecoration: 'underline' }}
               >
-                Condomínio Fazendinha Conj. A - Sobradinho, Brasília - DF,
-                70297-400
+                Condomínio Fazendinha Conj. A - Itapuã, Brasília - DF, 70297-400
               </Text>
             </Flex>
 
             <Flex alignItems="center" justifyContent="flex-start" gap={4}>
               <HiOutlineMail size={26} color="#193B4B" />
 
-              <Text>mppremoldados@gmail.com</Text>
+              <Text
+                as="a"
+                href="mailto:mppremoldados@gmail.com"
+                _hover={{ textDecoration: 'underline' }}
+              >
+                mppremoldados@gmail.com
+              </Text>
             </Flex>
 
             <Flex alignItems="center" justifyContent="flex-start" gap={4}>
@@ -99,6 +121,7 @@ const Contato: NextPage = () => {
                 as="a"
                 target="_blank"
                 cursor="pointer"
+                _hover={{ textDecoration: 'underline' }}
                 href="https://www.facebook.com/mppremoldados/"
               >
                 https://www.facebook.com/mppremoldados
@@ -112,6 +135,7 @@ const Contato: NextPage = () => {
                 as="a"
                 target="_blank"
                 cursor="pointer"
+                _hover={{ textDecoration: 'underline' }}
                 href="https://www.instagram.com/mp.premoldados/"
               >
                 https://www.instagram.com/mp.premoldados
@@ -122,6 +146,7 @@ const Contato: NextPage = () => {
       </Box>
 
       <Footer />
+      <WhatsappButton phoneNumber="6141027744" text="" />
     </>
   );
 };

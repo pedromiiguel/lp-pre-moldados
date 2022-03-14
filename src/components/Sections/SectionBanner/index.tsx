@@ -1,11 +1,16 @@
-import { Box, Flex, Heading, Text } from '@chakra-ui/react';
+import { Box, Flex, Heading } from '@chakra-ui/react';
 import React from 'react';
-import { Navbar } from '../Navbar';
+import { Navbar } from '../../Navbar';
+
+const content = {
+  firstTitle: 'N° 1 EM BLOCOS E CANALETAS',
+  secondTitle: 'DE CONCRETO EM BRASÍLIA',
+};
 
 export const SectionBanner = () => {
   return (
     <Box
-      as="main"
+      as="header"
       width="100%"
       height="100vh"
       sx={{
@@ -16,7 +21,7 @@ export const SectionBanner = () => {
         backgroundPosition: 'center',
       }}
     >
-      <Navbar backgroundColor="transparent" />
+      <Navbar />
       <Box width="100%" height="100%" bg="transparent">
         <Flex
           alignItems="center"
@@ -33,10 +38,10 @@ export const SectionBanner = () => {
             px={[4, 8, 8, 8]}
           >
             <Heading fontSize={['3xl', '5xl']} lineHeight={['3xl', '5xl']}>
-              N° 1 EM BLOCOS E CANALETAS
+              {content.firstTitle}
             </Heading>
             <Heading fontSize={['3xl', '5xl']} lineHeight={['3xl', '5xl']}>
-              DE CONCRETO EM BRASÍLIA
+              {content.secondTitle}
             </Heading>
           </Flex>
         </Flex>

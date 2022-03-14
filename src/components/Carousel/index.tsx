@@ -1,25 +1,22 @@
-import '../../../tsconfig.json';
-
-import React, { useRef, useState } from 'react';
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-
-// import required modules
-import { Pagination, Navigation } from 'swiper';
 import {
   Box,
   chakra,
   Flex,
   Heading,
-  useBreakpointValue,
+  Text,
+  useBreakpointValue
 } from '@chakra-ui/react';
 import Image from 'next/image';
-
+import React from 'react';
+// import required modules
+import { Navigation, Pagination } from 'swiper';
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+import '../../../tsconfig.json';
 import { products } from './produts';
 
 export function Carousel() {
@@ -44,15 +41,10 @@ export function Carousel() {
   return (
     <>
       <Box
-        px={[4, 8, 8, 8]}
         sx={{
           '.swiper-slide': {
             height: '100%',
             width: '100%',
-            img: {
-              boxShadow: '0px 0px 12px rgba(0, 0, 0, 0.555)',
-              objectFit: 'fill',
-            },
             borderRadius: '8px',
             background: 'white',
           },
@@ -84,21 +76,43 @@ export function Carousel() {
               <SwiperSlide>
                 <Flex
                   width="100%"
-                  height={['400px', '500px']}
+                  height={['500px', '600px']}
                   flexDirection="column"
+                  textAlign="center"
                 >
-                  <Box width="100%" height={['300px', '400px']} position="relative">
+                  <Box
+                    width="100%"
+                    height={['300px', '400px']}
+                    position="relative"
+                  >
                     <OurImage
                       src={product.image}
                       alt="sobre"
                       layout="fill"
                       borderRadius="8px"
+                      objectFit="contain"
                     />
                   </Box>
 
-                  <Heading color="gray.900" size="md" py={5} textAlign="center">
+                  <Heading color="gray.900" size="md" py={5}>
                     {product.name} {product.description}
                   </Heading>
+                  {!!product.price && (
+                    <Text fontSize="mb" color="gray.500">
+                      <Text as="span" fontWeight="bold" fontSize="lg" color="black">
+                        Preço:
+                      </Text>{' '}
+                      {product.price}
+                    </Text>
+                  )}
+                  {!!product.thousand && (
+                    <Text fontSize="mb" color="gray.500">
+                      <Text as="span" fontWeight="bold" fontSize="lg" color="black">
+                        Milheiro:
+                      </Text>{' '}
+                      {product.thousand}
+                    </Text>
+                  )}
                 </Flex>
               </SwiperSlide>
             </div>

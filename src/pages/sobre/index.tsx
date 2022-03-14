@@ -1,12 +1,10 @@
 import {
-  Box,
   Flex,
   Grid,
   GridItem,
   Heading,
   Stack,
-  Text,
-  chakra,
+  Text
 } from '@chakra-ui/react';
 import { NextPage } from 'next';
 import Head from 'next/head';
@@ -51,7 +49,7 @@ const Sobre: NextPage = () => {
             }}
             position="relative"
           >
-            <Image src="/banner3.png" alt="bloco" layout="fill" />
+            <Image src="/banner3.png" alt="bloco" layout="fill" objectFit="cover"/>
           </GridItem>
 
           <GridItem>
@@ -84,7 +82,7 @@ const Sobre: NextPage = () => {
         </Grid>
       </Flex>
       <Footer />
-      <WhatsappButton phoneNumber="61 993806396" text="" />
+      <WhatsappButton phoneNumber="6141027744" text="" />
     </>
   );
 };
