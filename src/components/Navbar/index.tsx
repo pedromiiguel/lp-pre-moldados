@@ -154,9 +154,6 @@ export function Navbar({
                 <SidebarContent onClose={onClose} />
               </DrawerContent>
             </Drawer>
-            <Box ml={{ base: 0, md: 60 }} p="4">
-              <Text>Pedro</Text>
-            </Box>
           </Box>
         )}
       </Box>
