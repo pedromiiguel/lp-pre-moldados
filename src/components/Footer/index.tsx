@@ -7,9 +7,9 @@ import {
   Text,
   useBreakpointValue,
   useColorModeValue,
-  VisuallyHidden
+  VisuallyHidden,Image
 } from '@chakra-ui/react';
-import Image from 'next/image';
+
 import Link from 'next/link';
 import { ReactNode } from 'react';
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
@@ -70,7 +70,7 @@ export function Footer() {
     <Box
       bg="#f4f4f4"
       color={useColorModeValue('gray.700', 'gray.200')}
-      as="footer"
+      // as="footer"
     >
       <Container as={Stack} py={10}>
         <SimpleGrid

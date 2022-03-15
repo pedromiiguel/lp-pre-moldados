@@ -3,7 +3,7 @@ import React from 'react';
 import Container from '../../Container';
 import content from './content';
 
-const SectionServices = () => {
+function SectionServices() {
   return (
     <Flex
       as="section"
@@ -73,7 +73,7 @@ const SectionServices = () => {
                 }}
                 as={service.icon}
               />
-              {service.icon}
+
               <Heading textAlign="center" size="md" my={8}>
                 {service.name}
               </Heading>
@@ -83,6 +83,6 @@ const SectionServices = () => {
       </Container>
     </Flex>
   );
-};
+}
 
 export default SectionServices;

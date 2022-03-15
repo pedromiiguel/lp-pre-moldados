@@ -1,5 +1,4 @@
 import { Flex } from '@chakra-ui/react';
-import Image from 'next/image';
 import React from 'react';
 
 type WhatsappButtonProps = {
@@ -21,10 +20,11 @@ export const WhatsappButton = ({ phoneNumber, text }: WhatsappButtonProps) => {
       bg="#45c655"
       borderRadius="100%"
       padding="12px 10px 11px 12px"
+      aria-label="Open Whatsapp"
       target="_blank"
       href={`https://api.whatsapp.com/send?phone=55${phoneNumber}&text=${text}`}
     >
-      <Image
+      <img
         src="/whatsapp-icon.svg"
         alt="ícone do whatsapp"
         width="42px"

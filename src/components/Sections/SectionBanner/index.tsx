@@ -10,17 +10,17 @@ const content = {
 export const SectionBanner = () => {
   return (
     <Box
-      as="header"
-      width="100%"
-      height="100vh"
+    as="header"
+    width="100%"
+    height="100vh"
       sx={{
         background:
-          'linear-gradient(#fffbfb92, #dad5d547), url(banner.jpg) no-repeat',
+        'linear-gradient(#fffbfb92, #dad5d547), url(banner.jpg) no-repeat',
         backgroundSize: 'cover',
         backgroundAttachment: 'fixed',
         backgroundPosition: 'center',
       }}
-    >
+      >
       <Navbar />
       <Box width="100%" height="100%" bg="transparent">
         <Flex

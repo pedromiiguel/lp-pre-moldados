@@ -78,9 +78,13 @@ export const products = [
   },
   {
     name: 'Muro Pré Moldado',
-    price: '',
+    price: [
+      'R$ 140,00/MT na altura de 1,80cm',
+      'R$ 160,00/MT na altura de 2,20cm',
+      'R$ 220,00/MT na altura de 2,70cm',
+    ],
     description: '',
-    image: '/products/muro_pré_moldado.jpg',
+    image: '/products/muro_pre_moldado.jpg',
     thousand: '',
   },
 ];

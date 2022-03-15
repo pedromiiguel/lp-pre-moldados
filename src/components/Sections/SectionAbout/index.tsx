@@ -1,13 +1,16 @@
-import { Box, chakra, Flex, Heading, Stack, Text } from '@chakra-ui/react';
-import Image from 'next/image';
+import {
+  Box,
+  chakra,
+  Flex,
+  Heading,
+  Stack,
+  Text,
+  Image,
+} from '@chakra-ui/react';
+
 import React from 'react';
 import content from './content';
 export const SectionAbout = () => {
-  const OurImage = chakra(Image, {
-    shouldForwardProp: (prop) =>
-      ['width', 'height', 'src', 'alt', 'layout'].includes(prop),
-  });
-
   return (
     <Flex
       id="sobre"
@@ -35,23 +38,18 @@ export const SectionAbout = () => {
           {content.secondParagraph}
         </Text>
       </Stack>
-      <Box
+
+      <Image
+        borderRadius="8px"
+        src="/banner_section_about.jpg"
+        alt="Blocos de concreto empilhados"
         width={['100%', '100%', '100%', '45%']}
         height={['300px', '550px']}
-        position="relative"
-        borderRadius="8px"
         sx={{
           boxShadow: '0px 0px 12px rgba(0, 0, 0, 0.3)',
         }}
-      >
-        <OurImage
-          borderRadius="8px"
-          src="/banner_section_about.jpg"
-          alt="Blocos de concreto empilhados"
-          layout="fill"
-          objectFit="cover"
-        />
-      </Box>
+        objectFit="cover"
+      />
     </Flex>
   );
 };

@@ -30,7 +30,7 @@ const Home: NextPage = () => {
       <SectionServices />
       <SectionProducts />
       <SectionContacts />
-      <Footer />
+      {/* <Footer /> */}
 
       <WhatsappButton phoneNumber="6141027744" text="" />
     </>

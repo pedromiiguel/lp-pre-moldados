@@ -16,9 +16,10 @@ import {
   Text,
   useBreakpointValue,
   useColorModeValue,
-  useDisclosure
+  useDisclosure,
+  Image,
 } from '@chakra-ui/react';
-import Image from 'next/image';
+
 import Link from 'next/link';
 import { ReactNode, ReactText } from 'react';
 import { IconType } from 'react-icons';
@@ -26,9 +27,9 @@ import { FiBook, FiHome, FiPhone, FiShoppingCart } from 'react-icons/fi';
 
 const Links = [
   { name: 'Home', icon: FiHome, href: '/' },
-  { name: 'Sobre nós', icon: FiBook, href: '/sobre' },
   { name: 'Produtos', icon: FiShoppingCart, href: '/produto' },
   { name: 'Fale conosco', icon: FiPhone, href: '/contato' },
+  { name: 'Sobre nós', icon: FiBook, href: '/sobre' },
 ];
 
 type NavbarProps = {
@@ -69,12 +70,6 @@ export function Navbar({
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const OurImage = chakra(Image, {
-    shouldForwardProp: (prop) =>
-      ['width', 'height', 'src', 'alt', 'layout'].includes(prop),
-  });
-
-
   return (
     <>
       <Box bg={backgroundColor} py={2} px={2}>
@@ -94,7 +89,7 @@ export function Navbar({
             onClick={isOpen ? onClose : onOpen}
           />
           <Link href="/" passHref>
-            <OurImage
+            <Image
               src="/logo.png"
               width="80px"
               height="80px"

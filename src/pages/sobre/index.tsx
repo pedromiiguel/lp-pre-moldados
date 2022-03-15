@@ -4,11 +4,11 @@ import {
   GridItem,
   Heading,
   Stack,
-  Text
+  Text,
+  Image,
 } from '@chakra-ui/react';
 import { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 import { Footer } from '../../components/Footer';
 import { Navbar } from '../../components/Navbar';
 import { WhatsappButton } from '../../components/WhatsappButton';
@@ -42,14 +42,17 @@ const Sobre: NextPage = () => {
           my={[8, 8, 32]}
         >
           <GridItem
-            width="100%"
-            height={[246, 446]}
             sx={{
               boxShadow: '0px 0px 12px rgba(0, 0, 0, 0.3)',
             }}
-            position="relative"
           >
-            <Image src="/banner3.png" alt="bloco" layout="fill" objectFit="cover"/>
+            <Image
+              src="/blocks_about.png"
+              width="100%"
+              height={[246, 446]}
+              alt="blocos de concretos empilhados"
+              objectFit="cover"
+            />
           </GridItem>
 
           <GridItem>

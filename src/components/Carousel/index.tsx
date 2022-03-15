@@ -4,9 +4,9 @@ import {
   Flex,
   Heading,
   Text,
-  useBreakpointValue
+  useBreakpointValue,
+  Image,
 } from '@chakra-ui/react';
-import Image from 'next/image';
 import React from 'react';
 // import required modules
 import { Navigation, Pagination } from 'swiper';
@@ -31,11 +31,6 @@ export function Carousel() {
     base: '500px',
     sm: '400px',
     lg: '500px',
-  });
-
-  const OurImage = chakra(Image, {
-    shouldForwardProp: (prop) =>
-      ['width', 'height', 'src', 'alt', 'layout'].includes(prop),
   });
 
   return (
@@ -72,50 +67,62 @@ export function Carousel() {
           className="mySwiper"
         >
           {products.map((product) => (
-            <div key={product.description}>
-              <SwiperSlide>
-                <Flex
+            <SwiperSlide key={`${product.name} ${product.description}`}>
+              <Flex
+                width="100%"
+                height={['500px', '600px']}
+                flexDirection="column"
+                textAlign="center"
+              >
+                <Image
+                  src={product.image}
+                  alt={product.name}
                   width="100%"
-                  height={['500px', '600px']}
-                  flexDirection="column"
-                  textAlign="center"
-                >
-                  <Box
-                    width="100%"
-                    height={['300px', '400px']}
-                    position="relative"
-                  >
-                    <OurImage
-                      src={product.image}
-                      alt="sobre"
-                      layout="fill"
-                      borderRadius="8px"
-                      objectFit="contain"
-                    />
-                  </Box>
+                  height={['300px', '350px']}
+                  borderRadius="8px"
+                  objectFit="contain"
+                />
 
-                  <Heading color="gray.900" size="md" py={5}>
-                    {product.name} {product.description}
-                  </Heading>
-                  {!!product.price && (
-                    <Text fontSize="mb" color="gray.500">
-                      <Text as="span" fontWeight="bold" fontSize="lg" color="black">
-                        Preço:
-                      </Text>{' '}
-                      {product.price}
+                <Heading color="gray.900" size="md" py={5}>
+                  {product.name} {product.description}
+                </Heading>
+
+                {!!product.price && !Array.isArray(product.price) && (
+                  <Flex align="center" justify="center">
+                    <Text color="gray.900" fontWeight="bold" mr={2} as="span">
+                      Preço:
                     </Text>
-                  )}
-                  {!!product.thousand && (
-                    <Text fontSize="mb" color="gray.500">
-                      <Text as="span" fontWeight="bold" fontSize="lg" color="black">
-                        Milheiro:
-                      </Text>{' '}
-                      {product.thousand}
+                    <Text color="gray.300">{product.price}</Text>
+                  </Flex>
+                )}
+                {!!product.price && Array.isArray(product.price) && (
+                  <Text color="gray.900" fontWeight="bold" mr={2}>
+                    Preços:
+                  </Text>
+                )}
+
+                {!!product.price &&
+                  Array.isArray(product.price) &&
+                  product.price.map((price: string) => (
+                    <Text color="gray.300" key={price}>
+                      {price}
                     </Text>
-                  )}
-                </Flex>
-              </SwiperSlide>
-            </div>
+                  ))}
+                {!!product.thousand && (
+                  <Text fontSize="mb" color="gray.500">
+                    <Text
+                      as="span"
+                      fontWeight="bold"
+                      fontSize="lg"
+                      color="black"
+                    >
+                      Milheiro:
+                    </Text>{' '}
+                    {product.thousand}
+                  </Text>
+                )}
+              </Flex>
+            </SwiperSlide>
           ))}
         </Swiper>
       </Box>

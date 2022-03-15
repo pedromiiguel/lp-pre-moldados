@@ -1,7 +1,6 @@
-import { Box, Button, Flex, Heading, Stack, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, Stack, Text,Image } from '@chakra-ui/react';
 import { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 import { BsTelephone } from 'react-icons/bs';
 import { FiFacebook, FiInstagram } from 'react-icons/fi';
 import { HiOutlineMail } from 'react-icons/hi';
@@ -71,7 +70,7 @@ const Contato: NextPage = () => {
               <BsTelephone size={26} color="#193B4B" />
               <Text
                 as="a"
-                href="tel:614102774"
+                href="tel:6141027744"
                 _hover={{ textDecoration: 'underline' }}
               >
                 (61) 4102-7744

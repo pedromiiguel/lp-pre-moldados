@@ -5,21 +5,16 @@ import {
   Grid,
   GridItem,
   Heading,
-  Text
+  Text,
+  Image,
 } from '@chakra-ui/react';
 import { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 import { products } from '../../components/Carousel/produts';
 import { Footer } from '../../components/Footer';
 import { Navbar } from '../../components/Navbar';
 import { WhatsappButton } from '../../components/WhatsappButton';
 const Produto: NextPage = () => {
-  const OurImage = chakra(Image, {
-    shouldForwardProp: (prop) =>
-      ['width', 'height', 'src', 'alt', 'layout'].includes(prop),
-  });
-
   return (
     <>
       <Head>
@@ -45,7 +40,6 @@ const Produto: NextPage = () => {
         >
           {products.map((product) => (
             <GridItem
-              // w="300px"
               key={product.description}
               sx={{
                 boxShadow: '0px 0px 12px rgba(0, 0, 0, 0.2)',
@@ -56,18 +50,13 @@ const Produto: NextPage = () => {
               }}
             >
               <div>
-                <Box
+                <Image
+                  src={product.image}
+                  alt={product.name}
                   width="100%"
                   height={['300px', '400px']}
-                  position="relative"
-                >
-                  <OurImage
-                    src={product.image}
-                    alt="sobre"
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                </Box>
+                  objectFit="contain"
+                />
 
                 <Box p={4}>
                   <Heading color="gray.900" size="md" py={5}>
@@ -81,14 +70,28 @@ const Produto: NextPage = () => {
                       <Text color="gray.300">{product.description}</Text>
                     </Flex>
                   )}
-                  {!!product.price && (
-                    <Flex>
-                      <Text color="gray.900" fontWeight="bold" mr={2}>
-                        Preço:
-                      </Text>
-                      <Text color="gray.300">{product.price}</Text>
-                    </Flex>
+                  {!!product.price &&
+                    !Array.isArray(product.price) && (
+                      <Flex>
+                        <Text color="gray.900" fontWeight="bold" mr={2}>
+                          Preço:
+                        </Text>
+                        <Text color="gray.300">{product.price}</Text>
+                      </Flex>
+                    )}
+                  {!!product.price && Array.isArray(product.price) && (
+                    <Text color="gray.900" fontWeight="bold" mr={2}>
+                      Preços:
+                    </Text>
                   )}
+
+                  {!!product.price &&
+                    Array.isArray(product.price) &&
+                    product.price.map((price: string) => (
+                      <Text color="gray.300" key={price}>
+                        {price}
+                      </Text>
+                    ))}
 
                   {!!product.thousand && (
                     <Flex>
@@ -106,7 +109,6 @@ const Produto: NextPage = () => {
       </Box>
       <Footer />
       <WhatsappButton phoneNumber="6141027744" text="" />
-
     </>
   );
 };

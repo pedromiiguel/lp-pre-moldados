@@ -9,7 +9,7 @@ const content = {
   contacts: [
     {
       value: '(61) 4102-7744',
-      href: 'tel:614102774',
+      href: 'tel:6141027744',
       icon: <BsTelephone size={20} />,
       label: 'Telefone',
     },
