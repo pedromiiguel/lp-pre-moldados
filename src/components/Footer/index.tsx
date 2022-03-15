@@ -58,9 +58,9 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 
 const Links = [
   { name: 'Home', href: '/' },
-  { name: 'Sobre nós', href: '/sobre' },
   { name: 'Produtos', href: '/produto' },
   { name: 'Fale conosco', href: '/contato' },
+  { name: 'Sobre nós', href: '/sobre' },
 ];
 
 export function Footer() {
