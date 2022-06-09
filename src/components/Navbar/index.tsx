@@ -120,7 +120,7 @@ export function Navbar({
                 as="a"
                 target="_blank"
                 aria-label="Open Whatsapp"
-                href="https://api.whatsapp.com/send?phone=556141027744"
+                href="https://api.whatsapp.com/send?phone=5561994642112"
                 color="white"
                 _hover={{ backgroundColor: '#0f242e' }}
               >

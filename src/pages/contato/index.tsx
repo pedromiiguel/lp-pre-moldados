@@ -42,7 +42,7 @@ const Contato: NextPage = () => {
                 color="white"
                 as="a"
                 target="_blank"
-                href="https://api.whatsapp.com/send?phone=556141027744"
+                href="https://api.whatsapp.com/send?phone=5561994642112"
                 bg="blue.900"
                 aria-label="Open Whatsapp"
                 _hover={{ backgroundColor: '#0f242e' }}
@@ -70,10 +70,10 @@ const Contato: NextPage = () => {
               <BsTelephone size={26} color="#193B4B" />
               <Text
                 as="a"
-                href="tel:6141027744"
+                href="tel:61994642112"
                 _hover={{ textDecoration: 'underline' }}
               >
-                (61) 4102-7744
+                (61) 99464-2112
               </Text>
               |
               <Text
@@ -145,7 +145,7 @@ const Contato: NextPage = () => {
       </Box>
 
       <Footer />
-      <WhatsappButton phoneNumber="6141027744" text="" />
+      <WhatsappButton phoneNumber="61994642112" text="" />
     </>
   );
 };

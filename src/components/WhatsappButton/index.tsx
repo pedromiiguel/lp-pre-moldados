@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Flex } from '@chakra-ui/react';
 import React from 'react';
 

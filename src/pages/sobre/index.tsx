@@ -85,7 +85,7 @@ const Sobre: NextPage = () => {
         </Grid>
       </Flex>
       <Footer />
-      <WhatsappButton phoneNumber="6141027744" text="" />
+      <WhatsappButton phoneNumber="61994642112" text="" />
     </>
   );
 };

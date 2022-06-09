@@ -67,18 +67,17 @@ const Produto: NextPage = () => {
                       <Text color="gray.900" fontWeight="bold" mr={2}>
                         Dimensões:
                       </Text>
-                      <Text color="gray.300">{product.description}</Text>
+                      <Text color="gray.900">{product.description}</Text>
                     </Flex>
                   )}
-                  {!!product.price &&
-                    !Array.isArray(product.price) && (
-                      <Flex>
-                        <Text color="gray.900" fontWeight="bold" mr={2}>
-                          Preço:
-                        </Text>
-                        <Text color="gray.300">{product.price}</Text>
-                      </Flex>
-                    )}
+                  {!!product.price && !Array.isArray(product.price) && (
+                    <Flex>
+                      <Text color="gray.900" fontWeight="bold" mr={2}>
+                        Preço:
+                      </Text>
+                      <Text color="gray.900">{product.price}</Text>
+                    </Flex>
+                  )}
                   {!!product.price && Array.isArray(product.price) && (
                     <Text color="gray.900" fontWeight="bold" mr={2}>
                       Preços:
@@ -88,7 +87,7 @@ const Produto: NextPage = () => {
                   {!!product.price &&
                     Array.isArray(product.price) &&
                     product.price.map((price: string) => (
-                      <Text color="gray.300" key={price}>
+                      <Text color="gray.900" key={price}>
                         {price}
                       </Text>
                     ))}
@@ -98,7 +97,7 @@ const Produto: NextPage = () => {
                       <Text color="gray.900" fontWeight="bold" mr={2}>
                         Milheiro:
                       </Text>
-                      <Text color="gray.300">{product.thousand}</Text>
+                      <Text color="gray.900">{product.thousand}</Text>
                     </Flex>
                   )}
                 </Box>
@@ -108,7 +107,7 @@ const Produto: NextPage = () => {
         </Grid>
       </Box>
       <Footer />
-      <WhatsappButton phoneNumber="6141027744" text="" />
+      <WhatsappButton phoneNumber="61994642112" text="" />
     </>
   );
 };

@@ -92,7 +92,7 @@ export function Carousel() {
                     <Text color="gray.900" fontWeight="bold" mr={2} as="span">
                       Preço:
                     </Text>
-                    <Text color="gray.300">{product.price}</Text>
+                    <Text color="gray.900">{product.price}</Text>
                   </Flex>
                 )}
                 {!!product.price && Array.isArray(product.price) && (
@@ -104,12 +104,12 @@ export function Carousel() {
                 {!!product.price &&
                   Array.isArray(product.price) &&
                   product.price.map((price: string) => (
-                    <Text color="gray.300" key={price}>
+                    <Text color="gray.900" key={price}>
                       {price}
                     </Text>
                   ))}
                 {!!product.thousand && (
-                  <Text fontSize="mb" color="gray.500">
+                  <Text fontSize="mb" color="gray.900">
                     <Text
                       as="span"
                       fontWeight="bold"
@@ -117,7 +117,7 @@ export function Carousel() {
                       color="black"
                     >
                       Milheiro:
-                    </Text>{' '}
+                    </Text>
                     {product.thousand}
                   </Text>
                 )}

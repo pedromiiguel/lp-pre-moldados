@@ -32,7 +32,7 @@ const Home: NextPage = () => {
       <SectionContacts />
       <Footer />
 
-      <WhatsappButton phoneNumber="6141027744" text="" />
+      <WhatsappButton phoneNumber="61994642112" text="" />
     </>
   );
 };
