@@ -8,7 +8,7 @@ import Container from '../../Container';
 const content = {
   contacts: [
     {
-      value: '(61) 994640-2112',
+      value: '(61) 99464-2112',
       href: 'tel:61994642112',
       icon: <BsTelephone size={20} />,
       label: 'Telefone',
