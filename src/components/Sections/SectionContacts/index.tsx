@@ -9,16 +9,17 @@ const content = {
   contacts: [
     {
       value: '(61) 99464-2112',
-      href: 'tel:61994642112',
-      icon: <BsTelephone size={20} />,
-      label: 'Telefone',
+      href: 'https://api.whatsapp.com/send?phone=5561994642112',
+      icon: <FaWhatsapp size={20} />,
+      label: 'Whatsapp',
     },
     {
       value: '(61) 99380-6396',
       href: 'tel:61993806396',
-      icon: <FaWhatsapp size={20} />,
-      label: 'Whatsapp',
+      icon: <BsTelephone size={20} />,
+      label: 'Telefone',
     },
+
     {
       value: 'mppremoldados@gmail.com',
       href: 'mailto:mppremoldados@gmail.com',
@@ -59,6 +60,7 @@ export const SectionContacts: React.FC = () => {
                   </Heading>
                 </Flex>
                 <Text
+                target="_blank"
                   as="a"
                   href={item.href}
                   _hover={{ textDecoration: 'underline' }}
