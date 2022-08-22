@@ -27,7 +27,7 @@ import { FiBook, FiHome, FiPhone, FiShoppingCart } from 'react-icons/fi';
 
 const Links = [
   { name: 'Home', icon: FiHome, href: '/' },
-  { name: 'Produtos', icon: FiShoppingCart, href: '/produto' },
+  { name: 'Produtos', icon: FiShoppingCart, href: '/produtos' },
   { name: 'Fale conosco', icon: FiPhone, href: '/contato' },
   { name: 'Sobre nós', icon: FiBook, href: '/sobre' },
 ];
