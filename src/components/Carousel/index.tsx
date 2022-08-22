@@ -84,7 +84,7 @@ export function Carousel() {
                 />
 
                 <Heading color="gray.900" size="md" py={5}>
-                  {product.name} {product.description}
+                  {product.name}
                 </Heading>
 
                 {!!product.price && !Array.isArray(product.price) && (
@@ -100,6 +100,12 @@ export function Carousel() {
                     Preços:
                   </Text>
                 )}
+                <Flex align="center" justify="center">
+                  <Text color="gray.900" fontWeight="bold" mr={2} as="span">
+                    Medida:
+                  </Text>
+                  <Text color="gray.900">{product.description}</Text>
+                </Flex>
 
                 {!!product.price &&
                   Array.isArray(product.price) &&
