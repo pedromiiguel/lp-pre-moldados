@@ -12,8 +12,7 @@ const Container = ({ children, ...rest }: ContainerProps) => {
       marginLeft="auto"
       marginRight="auto"
       width="100%"
-      paddingLeft={[4, 8, 8, 8, 8]}
-      paddingRight={[4, 8, 8, 8, 8]}
+      px={[4, 8, 8, 8, 8]}
       {...rest}
     >
       {children}

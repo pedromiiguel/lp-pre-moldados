@@ -72,7 +72,7 @@ export function Navbar({
 
   return (
     <>
-      <Box bg={backgroundColor} py={2} px={2}>
+      <Box bg={backgroundColor} py={2} px={[4, 8, 8, 8, 8]}>
         <Flex
           h={16}
           alignItems={'center'}
