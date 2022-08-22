@@ -92,14 +92,6 @@ const Produto: NextPage = () => {
                       </Text>
                     ))}
 
-                  {!!product.thousand && (
-                    <Flex>
-                      <Text color="gray.900" fontWeight="bold" mr={2}>
-                        Milheiro:
-                      </Text>
-                      <Text color="gray.900">{product.thousand}</Text>
-                    </Flex>
-                  )}
                 </Box>
               </div>
             </GridItem>
