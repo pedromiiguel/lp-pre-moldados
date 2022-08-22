@@ -27,12 +27,6 @@ export function Carousel() {
     lg: 3,
   });
 
-  const widthSlides = useBreakpointValue({
-    base: '500px',
-    sm: '400px',
-    lg: '500px',
-  });
-
   return (
     <>
       <Box
@@ -40,14 +34,15 @@ export function Carousel() {
           '.swiper-slide': {
             height: '100%',
             width: '100%',
-            borderRadius: '8px',
             background: 'white',
           },
           '.swiper-button-next': {
+            right: 0,
             color: 'gray.100',
             top: '45%',
           },
           '.swiper-button-prev': {
+            left: 0,
             color: 'gray.100',
             top: '45%',
           },
@@ -70,7 +65,7 @@ export function Carousel() {
             <SwiperSlide key={`${product.name} ${product.description}`}>
               <Flex
                 width="100%"
-                height={['500px', '600px']}
+                height="500px"
                 flexDirection="column"
                 textAlign="center"
               >
@@ -78,8 +73,7 @@ export function Carousel() {
                   src={product.image}
                   alt={product.name}
                   width="100%"
-                  height={['300px', '350px']}
-                  borderRadius="8px"
+                  height="300px"
                   objectFit="contain"
                 />
 

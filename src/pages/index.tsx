@@ -6,7 +6,6 @@ import { SectionAbout } from '../components/Sections/SectionAbout';
 import { SectionBanner } from '../components/Sections/SectionBanner';
 import { SectionContacts } from '../components/Sections/SectionContacts';
 import SectionProducts from '../components/Sections/SectionProducts';
-import SectionServices from '../components/Sections/SectionServices';
 import { WhatsappButton } from '../components/WhatsappButton';
 
 const Home: NextPage = () => {
@@ -26,8 +25,6 @@ const Home: NextPage = () => {
       <Container as="section">
         <SectionAbout />
       </Container>
-
-      <SectionServices />
       <SectionProducts />
       <SectionContacts />
       <Footer />
