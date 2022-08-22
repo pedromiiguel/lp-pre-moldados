@@ -114,19 +114,6 @@ export function Carousel() {
                       {price}
                     </Text>
                   ))}
-                {!!product.thousand && (
-                  <Text fontSize="mb" color="gray.900">
-                    <Text
-                      as="span"
-                      fontWeight="bold"
-                      fontSize="lg"
-                      color="black"
-                    >
-                      Milheiro:
-                    </Text>
-                    {product.thousand}
-                  </Text>
-                )}
               </Flex>
             </SwiperSlide>
           ))}
