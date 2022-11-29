@@ -8,6 +8,7 @@
     "export": "next export",
     "start": "next start",
     "deploy-static": "next build && next export",
+    "postbuild": "next-sitemap",
     "lint": "next lint"
   },
   "dependencies": {
@@ -27,6 +28,7 @@
     "@types/react": "17.0.39",
     "eslint": "8.9.0",
     "eslint-config-next": "12.1.0",
+    "next-sitemap": "^3.1.32",
     "typescript": "4.5.5"
   }
 }

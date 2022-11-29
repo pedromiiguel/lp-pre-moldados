@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://mppremoldados.com
+
+# Sitemaps
+Sitemap: https://mppremoldados.com/sitemap.xml
