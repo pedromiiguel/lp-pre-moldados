@@ -7,7 +7,7 @@
     "build": "next build",
     "export": "next export",
     "start": "next start",
-    "deploy-static": "yarn build && yarn export",
+    "deploy-static": "next build && next export",
     "lint": "next lint"
   },
   "dependencies": {
