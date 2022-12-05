@@ -31,6 +31,7 @@ const Produto: NextPage = () => {
           name="description"
           content="Confira todos os produtos da MP Pré Moldados"
         />
+        <link rel="canonical" href="https://mppremoldados.com/produtos" />
       </Head>
       <Navbar backgroundColor="transparent" isBorderBottom />
 
