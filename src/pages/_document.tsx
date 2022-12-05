@@ -16,6 +16,19 @@ class MyDocument extends Document {
           />
           <link rel="shortcut icon" href="favicon.png" />
           <link rel="apple-touch-icon" href="favicon.png" />
+
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content="MP Pré Moldados" />
+          <meta
+            property="og:description"
+            content="A MP PRÉ-MOLDADOS foi criada e fundada em 2012 com intuito de suprir a
+          demanda de materiais Pré-moldados para diversas regiões de Brasília."
+          />
+          <meta property="og:image" content="https://mppremoldados.com/banner_section_about.jpg" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <meta property="og:locale" content="pt_BR" />
+          <link rel="canonical" href="https://mppremoldados.com/" />
         </Head>
         <body>
           <noscript>
