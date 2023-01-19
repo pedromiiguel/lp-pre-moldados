@@ -105,12 +105,6 @@ export function Footer() {
             <ListHeader>Redes Sociais</ListHeader>
             <Stack direction={'row'} spacing={6}>
               <SocialButton
-                label={'Facebook'}
-                href={'https://www.facebook.com/mppremoldados/'}
-              >
-                <FaFacebook />
-              </SocialButton>
-              <SocialButton
                 label={'Instagram'}
                 href={
                   'https://www.instagram.com/mp.premoldados/?utm_medium=copy_link'
