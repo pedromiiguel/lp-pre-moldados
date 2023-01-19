@@ -13,12 +13,6 @@ const content = {
       icon: <FaWhatsapp size={20} />,
       label: 'Whatsapp',
     },
-    {
-      value: '(61) 99380-6396',
-      href: 'tel:61993806396',
-      icon: <BsTelephone size={20} />,
-      label: 'Telefone',
-    },
 
     {
       value: 'mppremoldados@gmail.com',
