@@ -20,12 +20,12 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
+
       <SectionBanner />
-      <Container as="section">
-        <SectionAbout />
-      </Container>
+
+
       <SectionProducts />
+      <SectionAbout />
       <SectionContacts />
       <Footer />
 
