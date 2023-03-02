@@ -1,6 +1,5 @@
 import {
   Box,
-  chakra,
   Flex,
   Heading,
   Text,
@@ -61,8 +60,8 @@ export function Carousel() {
           modules={[Pagination, Navigation]}
           className="mySwiper"
         >
-          {products.map((product) => (
-            <SwiperSlide key={`${product.name} ${product.description}`}>
+          {products.map((product, index) => (
+            <SwiperSlide key={index}>
               <Flex
                 width="100%"
                 height="500px"
@@ -81,33 +80,14 @@ export function Carousel() {
                   {product.name}
                 </Heading>
 
-                {!!product.price && !Array.isArray(product.price) && (
+                {!!product.description && (
                   <Flex align="center" justify="center">
                     <Text color="gray.900" fontWeight="bold" mr={2} as="span">
-                      Preço:
+                      Medida:
                     </Text>
-                    <Text color="gray.900">{product.price}</Text>
+                    <Text color="gray.900">{product.description}</Text>
                   </Flex>
                 )}
-                {!!product.price && Array.isArray(product.price) && (
-                  <Text color="gray.900" fontWeight="bold" mr={2}>
-                    Preços:
-                  </Text>
-                )}
-                <Flex align="center" justify="center">
-                  <Text color="gray.900" fontWeight="bold" mr={2} as="span">
-                    Medida:
-                  </Text>
-                  <Text color="gray.900">{product.description}</Text>
-                </Flex>
-
-                {!!product.price &&
-                  Array.isArray(product.price) &&
-                  product.price.map((price: string) => (
-                    <Text color="gray.900" key={price}>
-                      {price}
-                    </Text>
-                  ))}
               </Flex>
             </SwiperSlide>
           ))}
