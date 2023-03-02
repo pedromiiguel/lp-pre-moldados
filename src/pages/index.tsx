@@ -12,7 +12,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>MP Pré Moldados</title>
+        <title>MP Pré-Moldados e Construtora</title>
         <meta
           name="description"
           content="A MP PRÉ-MOLDADOS foi criada e fundada em 2012 com intuito de suprir a
@@ -22,13 +22,10 @@ const Home: NextPage = () => {
       </Head>
 
       <SectionBanner />
-
-
       <SectionProducts />
       <SectionAbout />
       <SectionContacts />
       <Footer />
-
       <WhatsappButton phoneNumber="61994642112" text="" />
     </>
   );
