@@ -1,17 +1,10 @@
 export const products = [
   {
-    name: 'Bloco 9cm',
+    name: 'Bloco 9cm  (Vazado Com fundo)',
     price: 'R$ 2,99',
     category: 'bloco',
-    description: '9x19x39 Com fundo',
+    description: '9x19x39',
     image: '/products/bloco_9x19x39_com_fundo.png',
-  },
-  {
-    name: 'Bloco 9cm',
-    price: 'R$ 2,89',
-    category: 'bloco',
-    description: '9x19x39 Vazado',
-    image: '/products/bloco_9x19x39_vazado.png',
   },
   {
     name: 'Bloco 12cm',
@@ -33,6 +26,49 @@ export const products = [
     category: 'bloco',
     description: '19x19x39 Vazado',
     image: '/products/bloco_19x19x39_vazado.png',
+  },
+  {
+    name: 'Meio Bloco 9cm',
+    price: 'R$ 2,20',
+    category: 'bloco',
+    description: '9x19',
+    image: '/products/meio_bloco_9x19.jpg',
+  },
+  {
+    name: 'Meio Bloco 12cm',
+    price: 'R$ 2,40',
+    category: 'bloco',
+    description: '12x19',
+    image: '/products/meio_bloco_12x19.jpg',
+  },
+  {
+    name: 'Meio Bloco 14cm',
+    price: 'R$ 2,85',
+    category: 'bloco',
+    description: '14x19',
+    image: '/products/meio_bloco_14x19.jpg',
+  },
+  {
+    name: 'Meio Bloco 19cm',
+    price: 'R$ 3,55',
+    category: 'bloco',
+    description: '19x19',
+    image: '/products/meio_bloco_19x19.jpg',
+  },
+  {
+    name: 'Bloco Ecológico',
+    price: 'R$ 5,99',
+    category: 'bloco',
+    description: '19x32',
+    image: '/products/meio_bloco_19x32.jpg',
+  },
+
+  {
+    name: 'Bloco Jardineira',
+    price: 'R$ 5,99',
+    category: 'bloco',
+    description: '12x30x39',
+    image: '/products/meio_bloco_jardineira.jpg',
   },
   {
     name: 'Canaleta 9cm',
@@ -73,18 +109,28 @@ export const products = [
     name: 'Canaleta Baldrame 20cm',
     price: 'R$ 6,49',
     category: 'canaleta',
-    description: ' 20x30',
+    description: '20x30',
+    image: '/products/canaleta_baldrame_20x30.png',
+  },
+  {
+    name: 'Canaleta Baldrame 22cm',
+    price: 'R$ 5,99',
+    category: 'canaleta',
+    description: '22x19x34',
+    image: '/products/canaleta_baldrame_15x30.png',
+  },
+  {
+    name: 'Canaleta Baldrame 27cm',
+    price: 'R$ 6,49',
+    category: 'canaleta',
+    description: '27x19x34',
     image: '/products/canaleta_baldrame_20x30.png',
   },
   {
     name: 'Muro Pré Moldado',
     category: 'muro',
-    price: [
-      'R$ 144,99/MT na altura de 1,80cm',
-      'R$ 169,99/MT na altura de 2,20cm',
-      'R$ 229,99/MT na altura de 2,70cm',
-    ],
-    description: '',
+    price: '',
+    description: '1,80cm | 2,20cm | 2,70cm',
     image: '/products/muro_pre_moldado.jpg',
   },
   {
@@ -190,7 +236,7 @@ export const products = [
     category: 'calcamento',
     price: 'R$ 17,00',
     description:
-      'Palito 1mt x20cm | Padrão Condomínio 9x24x1mt | Padrão NovaCap 12x29x1mt ',
+      'Palito 1mtx20cm | Padrão Condomínio 9x24x1mt | Padrão NovaCap 12x29x1mt ',
     image: '/products/meio_fio.jpg',
   },
   {
@@ -211,28 +257,28 @@ export const products = [
     name: 'Casa Pré-Moldada',
     category: 'muro',
     price: 'R$ 270,00',
-    description: 'Placa lisa 1,45x 0,45 | Placa tijolinho 1,00x 0,52 ',
+    description: 'Placa lisa 1,45x0,45 | Placa tijolinho 1,00x0,52 ',
     image: '/products/casa.jpg',
   },
   {
     name: 'Placas',
     category: 'muro',
     price: 'R$ 32,00',
-    description: '1mtx 0,52 | 1,45x 0,45 | 1,90x 0,45 ',
+    description: '1mtx0,52 | 1,45x0,45 | 1,90x0,45 ',
     image: '/products/placa.jpg',
   },
   {
     name: 'Postes',
     category: 'muro',
     price: 'R$ 25,00',
-    description: 'Cada metro',
+    description: '',
     image: '/products/poste.jpg',
   },
   {
     name: 'Estacas',
     category: 'muro',
     price: 'R$ 15,00',
-    description: 'Cada metro',
+    description: '',
     image: '/products/estacas.jpg',
   },
   {
@@ -260,14 +306,16 @@ export const products = [
     name: 'Suporte Para Energia Solar ',
     category: 'suporte',
     price: 'R$ 100,00',
-    description: '1,60m de comprimento | 67cm a parte maior | 40cm a parte menor | 40cm a parte menor',
+    description:
+      '1,60m de comprimento | 67cm a parte maior | 40cm a parte menor | 40cm a parte menor',
     image: '/products/suporte_energia_solar.jpg',
   },
   {
     name: 'Suporte Para Energia Solar - Caixa Maciça ',
     category: 'suporte',
     price: 'R$ 25,00',
-    description: '1,60m de comprimento | 67cm a parte maior | 40cm a parte menor | 40cm a parte menor',
+    description:
+      '1,60m de comprimento | 67cm a parte maior | 40cm a parte menor | 40cm a parte menor',
     image: '/products/suporte_energia_solar_caixa_macica.jpg',
   },
   {
@@ -290,12 +338,5 @@ export const products = [
     price: 'R$ 25,00',
     description: '',
     image: '/products/revestimento.jpg',
-  },
-  {
-    name: 'Revestimentos em Concreto',
-    category: 'decoracao',
-    price: 'R$ 25,00',
-    description: '',
-    image: '/products/revestimento2.jpg',
   },
 ];
