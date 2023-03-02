@@ -61,15 +61,6 @@ export const SectionBanner = () => {
               >
                 <SwiperSlide>
                   <Image
-                    src="/home/muro.jpg"
-                    alt="Muro de concreto"
-                    width={1000}
-                    height={300}
-                    objectFit="cover"
-                  />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <Image
                     src="/home/blocos.jpg"
                     alt="Blocos de concreto"
                     width={1000}
@@ -79,8 +70,17 @@ export const SectionBanner = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                   <Image
-                    src="/home/teste.jpg"
+                    src="/home/blocos_empilhados.jpg"
                     alt="Blocos de concreto empilhados"
+                    width={1000}
+                    height={300}
+                    objectFit="cover"
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <Image
+                    src="/home/muro.jpg"
+                    alt="Muro de concreto"
                     width={1000}
                     height={300}
                     objectFit="cover"
@@ -116,12 +116,20 @@ export const SectionBanner = () => {
                     height="225"
                     objectFit="contain"
                   />
-                  <Box>
-                    <Text fontSize="xs" textTransform="uppercase" opacity={0.7}>
+                  <Box width="100%">
+                    <Text
+                      fontSize="xs"
+                      textTransform="uppercase"
+                      opacity={0.7}
+                      textAlign="center"
+                    >
                       {categories[product.category]}
                     </Text>
-                    <Text fontSize="sm" color="gray.600">
+                    <Text fontSize="sm" color="gray.600" textAlign="center">
                       {product.name}
+                    </Text>
+                    <Text fontSize="sm" color="gray.600" textAlign="center">
+                      {product.description}
                     </Text>
                   </Box>
 
