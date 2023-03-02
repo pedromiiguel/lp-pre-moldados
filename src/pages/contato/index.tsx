@@ -21,7 +21,7 @@ const Contato: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Fale conosco - MP Pré Moldados</title>
+        <title>Fale conosco - MP Pré-Moldados e Construtora</title>
         <meta
           name="description"
           content="Entre em contato com a MP Pré Moldados, queremos tirar suas
