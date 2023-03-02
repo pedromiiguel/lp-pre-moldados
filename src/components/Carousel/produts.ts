@@ -88,20 +88,6 @@ export const products = [
     image: '/products/muro_pre_moldado.jpg',
   },
   {
-    name: 'Canaleta Baldrame',
-    category: 'canaleta',
-    price: 'R$ 6,49',
-    description: '27x19x34',
-    image: '/products/canaleta_baldrame_27_22.png',
-  },
-  {
-    name: 'Canaleta Baldrame',
-    category: 'canaleta',
-    price: 'R$ 5,99',
-    description: '22x19x34',
-    image: '/products/canaleta_baldrame_27_22.png',
-  },
-  {
     name: 'Manilhas',
     category: 'manilha',
     price: 'R$ 75,00',
