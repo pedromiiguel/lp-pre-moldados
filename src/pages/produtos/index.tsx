@@ -26,7 +26,7 @@ const Produto: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Produtos - MP Pré Moldados</title>
+        <title>Produtos - MP Pré-Moldados e Construtora</title>
         <meta
           name="description"
           content="Confira todos os produtos da MP Pré Moldados"
@@ -80,27 +80,6 @@ const Produto: NextPage = () => {
                           <Text color="gray.900">{product.description}</Text>
                         </Flex>
                       )}
-                      {!!product.price && !Array.isArray(product.price) && (
-                        <Flex>
-                          <Text color="gray.900" fontWeight="bold" mr={2}>
-                            Preço:
-                          </Text>
-                          <Text color="gray.900">{product.price}</Text>
-                        </Flex>
-                      )}
-                      {!!product.price && Array.isArray(product.price) && (
-                        <Text color="gray.900" fontWeight="bold" mr={2}>
-                          Preços:
-                        </Text>
-                      )}
-
-                      {!!product.price &&
-                        Array.isArray(product.price) &&
-                        product.price.map((price: string) => (
-                          <Text color="gray.900" key={price}>
-                            {price}
-                          </Text>
-                        ))}
                     </Box>
                   </div>
                 </GridItem>
@@ -137,27 +116,6 @@ const Produto: NextPage = () => {
                           <Text color="gray.900">{product.description}</Text>
                         </Flex>
                       )}
-                      {!!product.price && !Array.isArray(product.price) && (
-                        <Flex>
-                          <Text color="gray.900" fontWeight="bold" mr={2}>
-                            Preço:
-                          </Text>
-                          <Text color="gray.900">{product.price}</Text>
-                        </Flex>
-                      )}
-                      {!!product.price && Array.isArray(product.price) && (
-                        <Text color="gray.900" fontWeight="bold" mr={2}>
-                          Preços:
-                        </Text>
-                      )}
-
-                      {!!product.price &&
-                        Array.isArray(product.price) &&
-                        product.price.map((price: string) => (
-                          <Text color="gray.900" key={price}>
-                            {price}
-                          </Text>
-                        ))}
                     </Box>
                   </div>
                 </GridItem>
