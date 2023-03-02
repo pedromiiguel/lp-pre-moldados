@@ -14,8 +14,8 @@ const content = {
       label: 'Whatsapp',
     },
     {
-      value: '(61) 99380-6396',
-      href: 'tel:61993806396',
+      value: '(61) 99464-2112',
+      href: 'tel:61994642112',
       icon: <BsTelephone size={20} />,
       label: 'Telefone',
     },
