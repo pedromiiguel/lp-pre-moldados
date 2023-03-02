@@ -71,7 +71,7 @@ export const SectionBanner = () => {
                 <SwiperSlide>
                   <Image
                     src="/home/blocos.jpg"
-                    alt="Muro de concreto"
+                    alt="Blocos de concreto"
                     width={1000}
                     height={300}
                     objectFit="cover"
@@ -80,7 +80,7 @@ export const SectionBanner = () => {
                 <SwiperSlide>
                   <Image
                     src="/home/teste.jpg"
-                    alt="Muro de concreto"
+                    alt="Blocos de concreto empilhados"
                     width={1000}
                     height={300}
                     objectFit="cover"
