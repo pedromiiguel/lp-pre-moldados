@@ -17,7 +17,7 @@ const Sobre: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Sobre nós - MP Pré Moldados</title>
+        <title>Sobre nós - MP Pré-Moldados e Construtora</title>
         <meta
           name="description"
           content="Atualmente somos uma indústria especializada no comércio e
