@@ -99,20 +99,6 @@ export const products = [
     image: '/products/canaleta_19x19x39.png',
   },
   {
-    name: 'Canaleta Baldrame 15cm',
-    price: 'R$ 5,99',
-    category: 'canaleta',
-    description: '15x30',
-    image: '/products/canaleta_baldrame_15x30.png',
-  },
-  {
-    name: 'Canaleta Baldrame 20cm',
-    price: 'R$ 6,49',
-    category: 'canaleta',
-    description: '20x30',
-    image: '/products/canaleta_baldrame_20x30.png',
-  },
-  {
     name: 'Canaleta Baldrame 22cm',
     price: 'R$ 5,99',
     category: 'canaleta',
