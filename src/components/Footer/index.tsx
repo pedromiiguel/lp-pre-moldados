@@ -143,7 +143,7 @@ export function Footer() {
                   textDecoration: 'underline',
                 }}
               >
-                Condomínio Fazendinha Conj. A - Itapuã, Brasília - DF, 70297-400
+                Condomínio Fazendinha Conj. A - Itapuã, Brasília - DF, 71596-223
               </Text>
             </Flex>
           </Flex>

@@ -65,18 +65,13 @@ const Sobre: NextPage = () => {
             <Stack spacing={4} fontSize="md" color="gray.500">
               <Text>
                 Atualmente somos uma indústria especializada no comércio e
-                fabricação de Blocos e Canaletas de Concreto.
-              </Text>
-              <Text>
-                Contamos com uma ampla diversidades de materiais que visa suprir
-                a necessidade da Alvenaria de Vedação e Estrutural na Construção
-                civil.
+                Fabricação de artefatos de concreto.
               </Text>
               <Text>
                 A MP PRÉ-MOLDADOS foi criada e fundada em 2012 com intuito de
-                suprir a demanda de materiais Pré-moldados para diversas regiões
+                suprir a demanda de materiais Pré, Estoque, Entrega e Mercadorias para diversas regiões
                 de Brasília. Para isso, contamos com um amplo Estoque e Entrega
-                de Mercadorias à curto prazo afim de atender da melhor forma
+                de Mercadorias à curto prazo a fim de atender da melhor forma
                 tanto o mercado varejo como também o atacado.
               </Text>
 

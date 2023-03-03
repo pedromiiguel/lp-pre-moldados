@@ -88,14 +88,6 @@ const Contato: NextPage = () => {
               >
                 (61) 99464-2112
               </Text>
-              |
-              <Text
-                as="a"
-                href="tel:61993806396"
-                _hover={{ textDecoration: 'underline' }}
-              >
-                (61) 99380-6396
-              </Text>
             </Flex>
             <Flex>
               <Box ml={-1}>
@@ -123,20 +115,6 @@ const Contato: NextPage = () => {
                 _hover={{ textDecoration: 'underline' }}
               >
                 mppremoldados@gmail.com
-              </Text>
-            </Flex>
-
-            <Flex alignItems="center" justifyContent="flex-start" gap={4}>
-              <FiFacebook size={26} color="#193B4B" />
-
-              <Text
-                as="a"
-                target="_blank"
-                cursor="pointer"
-                _hover={{ textDecoration: 'underline' }}
-                href="https://www.facebook.com/mppremoldados/"
-              >
-                https://www.facebook.com/mppremoldados
               </Text>
             </Flex>
 
