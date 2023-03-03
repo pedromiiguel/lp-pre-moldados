@@ -56,7 +56,7 @@ export const products = [
     image: '/products/meio_bloco_19x19.jpg',
   },
   {
-    name: 'Bloco Ecológico',
+    name: 'Bloco Raquete',
     price: 'R$ 5,99',
     category: 'bloco',
     description: '19x32',
@@ -163,7 +163,7 @@ export const products = [
   },
   {
     name: 'Pingadeira de Concreto',
-    category: 'manilha',
+    category: 'decoracao',
     price: 'R$ 18,00',
     description: '17x80cm | 19x80cm',
     image: '/products/pingadeira.jpg',
@@ -193,7 +193,7 @@ export const products = [
     name: 'Caixa de Passagem',
     category: 'manilha',
     price: 'R$ 70,00',
-    description: 'Sem Fundo | Com Fundo | Tampa da Caixa',
+    description: 'Sem Fundo | Com Fundo | Tampa da Caixa | 52x48x42',
     image: '/products/caixa_passagem.jpg',
   },
   {
@@ -301,7 +301,7 @@ export const products = [
     category: 'suporte',
     price: 'R$ 25,00',
     description:
-      '1,60m de comprimento | 67cm a parte maior | 40cm a parte menor | 40cm a parte menor',
+      '20x20 com 25 MPA | Peso: 21kg',
     image: '/products/suporte_energia_solar_caixa_macica.jpg',
   },
   {
