@@ -15,10 +15,7 @@ const SectionProducts = () => {
   const [isSmallThan768] = useMediaQuery('(max-width: 768px)');
 
   return (
-    <Container
-      py={16}
-      as="section"
-    >
+    <Container py={16} as="section">
       <Heading textAlign="center" mb={10}>
         Produtos
       </Heading>
@@ -39,14 +36,22 @@ const SectionProducts = () => {
                 objectFit="contain"
               />
 
-              <Heading color="gray.900" size="md" py={5}>
+              <Heading
+                color="gray.900"
+                fontSize={{ base: 'md', md: 'md', sm: 'sm' }}
+                py={5}
+              >
                 {product.name}
               </Heading>
 
-              <Text color="gray.900" fontWeight="bold" mr={2} as="span">
-                Medida:
-              </Text>
-              <Text color="gray.900">{product.description}</Text>
+              {!!product.description && (
+                <>
+                  <Text color="gray.900" fontWeight="bold" mr={2} as="span">
+                    Medida:
+                  </Text>
+                  <Text color="gray.900">{product.description}</Text>
+                </>
+              )}
             </Flex>
           ))}
         </Grid>
