@@ -83,7 +83,7 @@ const Contato: NextPage = () => {
               <BsTelephone size={26} color="#193B4B" />
               <Text
                 as="a"
-                href="tel:61994642112"
+                href="tel:061994642112"
                 _hover={{ textDecoration: 'underline' }}
               >
                 (61) 99464-2112
