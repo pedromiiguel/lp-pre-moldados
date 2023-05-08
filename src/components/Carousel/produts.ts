@@ -59,10 +59,16 @@ export const products = [
     name: 'Bloco Raquete',
     price: 'R$ 5,99',
     category: 'bloco',
-    description: '19x32',
+    description: '19x39',
     image: '/products/meio_bloco_19x32.jpg',
   },
-
+  {
+    name: 'Bloco Ecológico',
+    price: 'R$ 5,99',
+    category: 'bloco',
+    description: '19x32',
+    image: '/products/bloco_ecologico.jpg',
+  },
   {
     name: 'Bloco Jardineira',
     price: 'R$ 5,99',
@@ -139,6 +145,13 @@ export const products = [
     price: 'R$ 37,00',
     description: '30x50 | 50x50',
     image: '/products/tubos.jpg',
+  },
+  {
+    name: 'Anel Tipo Tubo com Encaixe',
+    category: 'manilha',
+    price: 'R$ 37,00',
+    description: '50x50',
+    image: '/products/anel_tubo.jpg',
   },
   {
     name: 'Calhas',
@@ -226,6 +239,13 @@ export const products = [
     image: '/products/meio_fio.jpg',
   },
   {
+    name: 'Meio Fio Ondulado',
+    category: 'calcamento',
+    price: 'R$ 17,00',
+    description: '80x20x4',
+    image: '/products/meio_fio_ondulado.jpg',
+  },
+  {
     name: 'Banco com encosto',
     category: 'decoracao',
     price: 'R$ 360,00',
@@ -258,7 +278,7 @@ export const products = [
     category: 'muro',
     price: 'R$ 25,00',
     description: '',
-    image: '/products/poste.jpg',
+    image: '/products/postes.jpg',
   },
   {
     name: 'Estacas',
@@ -271,7 +291,7 @@ export const products = [
     name: 'Intertravado',
     category: 'calcamento',
     price: 'R$ 65,00',
-    description: '20x10x6 | 50 pçs por m²',
+    description: '20x10x6 | 45 pçs por m²',
     image: '/products/calcamento_intertravado.jpg',
   },
   {
@@ -300,8 +320,7 @@ export const products = [
     name: 'Suporte Para Energia Solar - Caixa Maciça ',
     category: 'suporte',
     price: 'R$ 25,00',
-    description:
-      '20x20 com 25 MPA | Peso: 21kg',
+    description: '20x20 com 25 MPA | Peso: 21kg',
     image: '/products/suporte_energia_solar_caixa_macica.jpg',
   },
   {
