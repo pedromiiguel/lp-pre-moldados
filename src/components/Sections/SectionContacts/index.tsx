@@ -8,13 +8,13 @@ import Container from '../../Container';
 const content = {
   contacts: [
     {
-      value: '(61) 99464-2112',
+      value: '(61) 99464-2112 (Itapuã  -DF)',
       href: 'https://api.whatsapp.com/send?phone=5561994642112',
       icon: <FaWhatsapp size={20} />,
       label: 'Whatsapp',
     },
     {
-      value: '(61) 99464-2112',
+      value: '(61) 99464-2112 (Itapuã  -DF)',
       href: 'tel:61994642112',
       icon: <BsTelephone size={20} />,
       label: 'Telefone',
@@ -46,7 +46,7 @@ export const SectionContacts: React.FC = () => {
             py={20}
             gap={20}
           >
-            {content.contacts.map((item) => (
+            {content.contacts.map((item, index) => (
               <Flex
                 flexDirection="column"
                 alignItems="center"
@@ -67,6 +67,16 @@ export const SectionContacts: React.FC = () => {
                 >
                   {item.value}
                 </Text>
+                {index !== 2 && (
+                   <Text
+                   target="_blank"
+                     as="a"
+                     href={index === 0? 'https://api.whatsapp.com/send?phone=5562996730993' : 'tel:62996730993'}
+                     _hover={{ textDecoration: 'underline' }}
+                   >
+                     (62) 99673-0993 (Posse - GO )
+                   </Text>
+                )}
               </Flex>
             ))}
           </Flex>
