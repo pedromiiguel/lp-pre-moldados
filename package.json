@@ -11,9 +11,6 @@
     "postbuild": "next-sitemap",
     "lint": "next lint"
   },
-  "engines": {
-    "node": "20.0.0"
-  },
   "dependencies": {
     "@chakra-ui/icons": "^1.1.5",
     "@chakra-ui/react": "^1.8.3",
